@@ -1,46 +1,50 @@
 // function getTempCallback (location, callback) {
-//     callback(undefine, 78);
-//     callback('City not found');
+//   callback(undefined, 78);
+//   callback('City not found');
 // }
-
-// getTempCallback('Detroit', function (err, temp) {
-//     if (err) {
-//         console.log('error: ', err);
-//     } else {
-//         console.log(success: ', temp');
-//     }
-// })
-// /*
-// Promise
-// */
-
+//
+// getTempCallback('Philadelphia', function (err, temp) {
+//   if (err) {
+//     console.log('error', err);
+//   } else {
+//     console.log('success', temp)
+//   }
+// });
+//
 // function getTempPromise (location) {
-//     return new Promise(function (resolve, reject) {
-//         resolve(79);
-//         reject('city not found');
-//     });
+//   return new Promise(function (resolve, reject) {
+//     setTimeout(function () {
+//       resolve(79);
+//       reject('City not found');
+//     }, 1000);
+//   });
 // }
-
-// getPromise('Detroit').then(function (temp) {
-//     console.log('promise success', temp);
+//
+// getTempPromise('Philadelphia').then(function (temp) {
+//   console.log('promise success', temp);
 // }, function (err) {
-//     console.log('promis error', err);
-// })
+//   console.log('promise error', err);
+// });
 
+// Challenge Area
 function addPromise (a, b) {
-    return new Promise(function(resolve,reject) {
-        if (typeof a === 'number' && typeof b === 'number') {
-            resolve(a+b);
-        } else {
-            reject('not a number');
-        }
-    })
-    
+  return new Promise(function (resolve, reject) {
+    if (typeof a === 'number' && typeof b === 'number') {
+      resolve(a + b);
+    } else {
+      reject('A & b need to be numbers');
+    }
+  });
 }
 
-addPromise(6, 'four').then(function (sum) {
-    console.log('success: ', sum)
+addPromise(2, 3).then(function (sum) {
+  console.log('success', sum);
 }, function (err) {
-    console.log('error ',err);
+  console.log('error', err);
+});
 
-})
+addPromise('andrew', 9).then(function (sum) {
+  console.log('this should not show up');
+}, function (err) {
+  console.log('This should appear', err);
+});
