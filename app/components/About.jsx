@@ -1,28 +1,27 @@
 var React = require('react');
-var {Link} = require('react-router');
+
 var About = (props) => {
   return (
     <div>
-    <h1 className="text-center page-title">About</h1>
-    <p>Important Links</p>
-    <ul>
-      <li>
-        <Link to='https://github.com/robscully70/react-weather'>Weather App</Link>
-      </li>
-      <li>
-      <Link to='https://facebook.github.io/react-native/docs/getting-started.html'>React Get Started</Link>
-      </li>
-      <li>
-      <Link to='https://css-tricks.com/snippets/css/a-guide-to-flexbox/'>Flexbox</Link>
-      </li>
-      <li>
-      <Link to='https://foundation.zurb.com/'>Foundation</Link>
-      </li>
-      <li>
-      <Link to='http://api.openweathermap.org'>Open Weather Map</Link>
-      </li>
-    </ul>
-  </div>
+      <h1 className="text-center page-title">About</h1>
+      <p>
+        This is a weather application build on React. I have built this
+        for The Complete React Web App Developer Course.
+      </p>
+      <p>
+        Here are some of the tools I used:
+      </p>
+      <ul>
+        <li>
+          <a href="https://facebook.github.io/react">React</a> - This was the
+            JavaScript framework used.
+        </li>
+        <li>
+          <a href="http://openweathermap.org">Open Weather Map</a> - I used
+            Open Weather Map to search for weather data by city name.
+        </li>
+      </ul>
+    </div>
   )
 };
 
